@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" routerLink="">Book Of Memes</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink=""
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/allposts">All Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isLoggedIn" routerLink="/following"
+          >Following</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contests">Contests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isLoggedIn" routerLink="/mymemes"
+          >My Memes</a
+        >
+      </li>
+    </ul>
+
+    <div style="padding-right: 8px;">
+      <a
+        ><span class="user-name-display">{{ name }}</span>
+      </a>
+    </div>
+
+    <div style="padding-right: 8px;">
+      <a
+        class="btn btn-warning my-lg-0 my-sm-0 "
+        *ngIf="isLoggedIn"
+        routerLink="/addmeme"
+        >+MEME</a
+      >
+    </div>
+
+    <div style="padding-right: 8px;">
+      <a
+        class="btn btn-success my-lh-0 my-sm-0"
+        routerLink="/signup"
+        *ngIf="!isLoggedIn"
+        >Sign Up</a
+      >
+    </div>
+
+    <div style="padding-right: 8px;">
+      <a
+        class="btn btn-danger my-lh-0 my-sm-0"
+        *ngIf="!isLoggedIn"
+        routerLink="/login"
+        >Login</a
+      >
+    </div>
+
+    <div>
+      <button *ngIf="isLoggedIn" class="btn btn-primary" (click)="onLogout()">
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>
