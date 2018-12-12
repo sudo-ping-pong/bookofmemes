@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
+
     this.userService.statusChange.subscribe(userData => {
       if (userData) {
         this.name = userData.name;
@@ -46,4 +47,11 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = false;
       });
   }
+
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen ;
+  }
+
 }

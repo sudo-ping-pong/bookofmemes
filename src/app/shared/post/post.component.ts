@@ -12,7 +12,7 @@ export class PostComponent implements OnInit {
   @Input() displayPostedBy: boolean = true;
   @Input() displayFavoritesButton: boolean = true;
   @Input() displayFollowButton: boolean = true;
-  defaultImage: string = "https://via.placeholder.com/150x150";
+  defaultImage: string = "https://via.placeholder.com/286x180";
   imageData: any = {};
 
   @Output() favoriteClicked =new EventEmitter<any>()

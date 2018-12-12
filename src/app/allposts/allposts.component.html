@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 text-left">
-      <button class="btn btn-primary" (click)="onLoadMore()">Load More Images</button>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-lg-12">
+      <h1 style="color:crimson; text-align: center">All Memes in Book</h1>
+      <br><br>
+      <hr>
 
       <div class="image-container">
         <app-post *ngFor="let post of all"
@@ -16,7 +14,14 @@
         >
         </app-post>
       </div>
+      
 
     </div>
   </div>
+
+  <div class="row">
+      <div class="col-lg-12 text-right">
+        <button class="btn btn-primary" (click)="onLoadMore()">Load More</button>
+      </div>
+    </div>
 </div>
